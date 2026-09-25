@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { MenuIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,7 +10,12 @@ type Props = {};
 
 const Navbar = (props: Props) => {
   return (
-    <header className="fixed left-0 right-0 top-0 z-[100] flex items-center justify-between border-b border-neutral-900 bg-black/40 px-4 py-4 backdrop-blur-lg">
+    <motion.header
+      initial={{ y: -20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
+      className="fixed left-0 right-0 top-0 z-[100] flex items-center justify-between border-b border-neutral-900 bg-black/40 px-4 py-4 backdrop-blur-lg"
+    >
       {/* Logo */}
       <aside className="flex items-center gap-2">
         <p className="text-3xl font-bold text-white">Fu</p>
@@ -27,37 +35,37 @@ const Navbar = (props: Props) => {
       <nav className="absolute left-[50%] top-[50%] hidden -translate-x-1/2 -translate-y-1/2 md:block">
         <ul className="flex list-none items-center gap-4">
           <li>
-            <Link href="#" className="text-white hover:text-gray-300">
+            <Link href="#" className="text-white transition-colors duration-300 hover:text-gray-300">
               Products
             </Link>
           </li>
 
           <li>
-            <Link href="#" className="text-white hover:text-gray-300">
+            <Link href="#" className="text-white transition-colors duration-300 hover:text-gray-300">
               Pricing
             </Link>
           </li>
 
           <li>
-            <Link href="#" className="text-white hover:text-gray-300">
+            <Link href="#" className="text-white transition-colors duration-300 hover:text-gray-300">
               Clients
             </Link>
           </li>
 
           <li>
-            <Link href="#" className="text-white hover:text-gray-300">
+            <Link href="#" className="text-white transition-colors duration-300 hover:text-gray-300">
               Resources
             </Link>
           </li>
 
           <li>
-            <Link href="#" className="text-white hover:text-gray-300">
+            <Link href="#" className="text-white transition-colors duration-300 hover:text-gray-300">
               Documentation
             </Link>
           </li>
 
           <li>
-            <Link href="#" className="text-white hover:text-gray-300">
+            <Link href="#" className="text-white transition-colors duration-300 hover:text-gray-300">
               Enterprise
             </Link>
           </li>
@@ -73,14 +81,14 @@ const Navbar = (props: Props) => {
           <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
 
           <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
-            {true ? 'Dashboard ': 'Get Strated'}
+            {true ? "Dashboard" : "Get Started"}
           </span>
         </Link>
         {/* {WIP: write user} */}
-        <MenuIcon className="md:hidden"/>
+        <MenuIcon className="md:hidden" />
       </aside>
-    </header>
+    </motion.header>
   );
 };
 
-export default Navbar;
+export default Navbar;
