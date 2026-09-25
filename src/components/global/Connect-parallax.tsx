@@ -28,7 +28,14 @@ export const HeroParallax = ({
     offset: ['start start', 'end start'],
   })
 
-  const springConfig = { stiffness: 300, damping: 30, bounce: 100 }
+  // Softer, more "fluid" spring: lower stiffness + higher damping/mass
+  // removes the snappy jitter and settles smoothly instead of bouncing.
+  const springConfig = {
+    stiffness: 100,
+    damping: 30,
+    mass: 0.5,
+    restDelta: 0.001,
+  }
 
   const translateX = useSpring(
     useTransform(scrollYProgress, [0, 1], [0, 1000]),
@@ -54,6 +61,7 @@ export const HeroParallax = ({
     useTransform(scrollYProgress, [0, 0.2], [-700, 500]),
     springConfig
   )
+
   return (
     <div
       ref={ref}
@@ -67,7 +75,6 @@ export const HeroParallax = ({
           translateY,
           opacity,
         }}
-        className=""
       >
         <motion.div className="flex flex-row-reverse space-x-reverse space-x-20 mb-20">
           {firstRow.map((product) => (
@@ -78,7 +85,7 @@ export const HeroParallax = ({
             />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row  mb-20 space-x-20 ">
+        <motion.div className="flex flex-row mb-20 space-x-20">
           {secondRow.map((product) => (
             <ProductCard
               product={product}
@@ -103,7 +110,13 @@ export const HeroParallax = ({
 
 export const Header = () => {
   return (
-    <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full left-0 top-0"
+    >
       <h1 className="text-2xl md:text-7xl font-bold dark:text-white">
         The Ultimate <br /> development studio
       </h1>
@@ -112,7 +125,7 @@ export const Header = () => {
         We are a team of passionate developers and designers that love to build
         amazing products.
       </p>
-    </div>
+    </motion.div>
   )
 }
 
@@ -134,24 +147,26 @@ export const ProductCard = ({
       }}
       whileHover={{
         y: -20,
+        scale: 1.03,
+        transition: { type: 'spring', stiffness: 260, damping: 20, mass: 0.4 },
       }}
       key={product.title}
       className="group/product h-96 w-[30rem] relative flex-shrink-0"
     >
       <Link
         href={product.link}
-        className="block group-hover/product:shadow-2xl "
+        className="block group-hover/product:shadow-2xl"
       >
         <Image
           src={product.thumbnail}
           height="600"
           width="600"
-          className="object-cover object-left-top absolute h-full w-full inset-0"
+          className="object-cover object-left-top absolute h-full w-full inset-0 transition-transform duration-500 ease-out"
           alt={product.title}
         />
       </Link>
-      <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div>
-      <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">
+      <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none transition-opacity duration-300 ease-out"></div>
+      <h2 className="absolute bottom-4 left-4 opacity-0 translate-y-2 group-hover/product:opacity-100 group-hover/product:translate-y-0 text-white transition-all duration-300 ease-out">
         {product.title}
       </h2>
     </motion.div>

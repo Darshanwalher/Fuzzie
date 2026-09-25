@@ -75,7 +75,7 @@ export default function Home() {
       {/* Clients Section */}
       <ScrollReveal direction="none" duration={1}>
         <InfiniteMovingCards
-          className="mt-[-100px] md:mt-[18rem]"
+          className="mt-[-100px] md:mt-[20rem]"
           items={clients}
           direction="right"
           speed="slow"
