@@ -1,3 +1,4 @@
+import { MenuIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -75,6 +76,8 @@ const Navbar = (props: Props) => {
             {true ? 'Dashboard ': 'Get Strated'}
           </span>
         </Link>
+        {/* {WIP: write user} */}
+        <MenuIcon className="md:hidden"/>
       </aside>
     </header>
   );
