@@ -25,7 +25,7 @@ export const InfiniteMovingCards = ({
   useEffect(() => {
     addAnimation()
   }, [])
-  
+
   const [start, setStart] = useState(false)
   function addAnimation() {
     if (containerRef.current && scrollerRef.current) {
@@ -69,7 +69,6 @@ export const InfiniteMovingCards = ({
       }
     }
   }
-  console.log(items)
   return (
     <div
       ref={containerRef}
@@ -88,11 +87,11 @@ export const InfiniteMovingCards = ({
       >
         {items.map((item, idx) => (
           <Image
-            width={170}
-            height={1}
+            width={200}
+            height={48}
             src={item.href}
             alt={item.href}
-            className=" relative rounded-2xl  object-contain opacity-50"
+            className="relative rounded-2xl object-contain opacity-60 hover:opacity-100 transition-opacity h-12 md:h-14 w-auto"
             key={item.href}
           />
         ))}

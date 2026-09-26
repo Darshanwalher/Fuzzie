@@ -25,7 +25,7 @@ const Navbar = (props: Props) => {
           width={15}
           height={15}
           alt="Fuzzie logo"
-          className="shadow-sm"
+          className="shadow-sm w-auto h-auto"
         />
 
         <p className="text-3xl font-bold text-white">Zie</p>
