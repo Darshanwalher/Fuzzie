@@ -17,4 +17,38 @@ import * as Prisma from './internal/prismaNamespaceBrowser'
 export { Prisma }
 export * as $Enums from './enums'
 export * from './enums';
-
+/**
+ * Model User
+ * 
+ */
+export type User = Prisma.UserModel
+/**
+ * Model LocalGoogleCredential
+ * 
+ */
+export type LocalGoogleCredential = Prisma.LocalGoogleCredentialModel
+/**
+ * Model DiscordWebhook
+ * 
+ */
+export type DiscordWebhook = Prisma.DiscordWebhookModel
+/**
+ * Model Slack
+ * 
+ */
+export type Slack = Prisma.SlackModel
+/**
+ * Model Notion
+ * 
+ */
+export type Notion = Prisma.NotionModel
+/**
+ * Model Connections
+ * 
+ */
+export type Connections = Prisma.ConnectionsModel
+/**
+ * Model Workflows
+ * 
+ */
+export type Workflows = Prisma.WorkflowsModel

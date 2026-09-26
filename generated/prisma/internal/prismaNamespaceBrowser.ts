@@ -51,7 +51,13 @@ export const AnyNull = runtime.AnyNull
 
 
 export const ModelName = {
-
+  User: 'User',
+  LocalGoogleCredential: 'LocalGoogleCredential',
+  DiscordWebhook: 'DiscordWebhook',
+  Slack: 'Slack',
+  Notion: 'Notion',
+  Connections: 'Connections',
+  Workflows: 'Workflows'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -68,4 +74,134 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 } as const)
 
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
+
+
+export const UserScalarFieldEnum = {
+  id: 'id',
+  clerkId: 'clerkId',
+  name: 'name',
+  email: 'email',
+  profileImage: 'profileImage',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  localGoogleId: 'localGoogleId',
+  googleResourceId: 'googleResourceId'
+} as const
+
+export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
+
+
+export const LocalGoogleCredentialScalarFieldEnum = {
+  id: 'id',
+  accessToken: 'accessToken',
+  folderId: 'folderId',
+  pageToken: 'pageToken',
+  channelId: 'channelId',
+  subscribed: 'subscribed',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  userId: 'userId'
+} as const
+
+export type LocalGoogleCredentialScalarFieldEnum = (typeof LocalGoogleCredentialScalarFieldEnum)[keyof typeof LocalGoogleCredentialScalarFieldEnum]
+
+
+export const DiscordWebhookScalarFieldEnum = {
+  id: 'id',
+  webhookId: 'webhookId',
+  url: 'url',
+  name: 'name',
+  guildName: 'guildName',
+  guildId: 'guildId',
+  channelId: 'channelId',
+  userId: 'userId'
+} as const
+
+export type DiscordWebhookScalarFieldEnum = (typeof DiscordWebhookScalarFieldEnum)[keyof typeof DiscordWebhookScalarFieldEnum]
+
+
+export const SlackScalarFieldEnum = {
+  id: 'id',
+  appId: 'appId',
+  authedUserId: 'authedUserId',
+  authedUserToken: 'authedUserToken',
+  slackAccessToken: 'slackAccessToken',
+  botUserId: 'botUserId',
+  teamId: 'teamId',
+  teamName: 'teamName',
+  userId: 'userId'
+} as const
+
+export type SlackScalarFieldEnum = (typeof SlackScalarFieldEnum)[keyof typeof SlackScalarFieldEnum]
+
+
+export const NotionScalarFieldEnum = {
+  id: 'id',
+  accessToken: 'accessToken',
+  workspaceId: 'workspaceId',
+  databaseId: 'databaseId',
+  workspaceName: 'workspaceName',
+  workspaceIcon: 'workspaceIcon',
+  userId: 'userId'
+} as const
+
+export type NotionScalarFieldEnum = (typeof NotionScalarFieldEnum)[keyof typeof NotionScalarFieldEnum]
+
+
+export const ConnectionsScalarFieldEnum = {
+  id: 'id',
+  type: 'type',
+  discordWebhookId: 'discordWebhookId',
+  notionId: 'notionId',
+  userId: 'userId',
+  slackId: 'slackId'
+} as const
+
+export type ConnectionsScalarFieldEnum = (typeof ConnectionsScalarFieldEnum)[keyof typeof ConnectionsScalarFieldEnum]
+
+
+export const WorkflowsScalarFieldEnum = {
+  id: 'id',
+  nodes: 'nodes',
+  edges: 'edges',
+  name: 'name',
+  discordTemplate: 'discordTemplate',
+  notionTemplate: 'notionTemplate',
+  slackTemplate: 'slackTemplate',
+  slackChannels: 'slackChannels',
+  slackAccessToken: 'slackAccessToken',
+  notionAccessToken: 'notionAccessToken',
+  notionDbId: 'notionDbId',
+  flowPath: 'flowPath',
+  cronPath: 'cronPath',
+  publish: 'publish',
+  description: 'description',
+  userId: 'userId'
+} as const
+
+export type WorkflowsScalarFieldEnum = (typeof WorkflowsScalarFieldEnum)[keyof typeof WorkflowsScalarFieldEnum]
+
+
+export const SortOrder = {
+  asc: 'asc',
+  desc: 'desc'
+} as const
+
+export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
+
+
+export const QueryMode = {
+  default: 'default',
+  insensitive: 'insensitive'
+} as const
+
+export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
+
+
+export const NullsOrder = {
+  first: 'first',
+  last: 'last'
+} as const
+
+export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 

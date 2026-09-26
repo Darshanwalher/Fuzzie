@@ -1,5 +1,6 @@
 "use client";
 
+import { UserButton } from "@clerk/nextjs";
 import { motion } from "framer-motion";
 import { MenuIcon } from "lucide-react";
 import Image from "next/image";
@@ -85,10 +86,11 @@ const Navbar = (props: Props) => {
           </span>
         </Link>
         {/* {WIP: write user} */}
+        <UserButton />
         <MenuIcon className="md:hidden" />
       </aside>
     </motion.header>
   );
 };
 
-export default Navbar;
+export default Navbar;

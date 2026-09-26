@@ -8,4 +8,11 @@
  *
  * 🟢 You can import this file directly.
  */
+export type * from './models/User'
+export type * from './models/LocalGoogleCredential'
+export type * from './models/DiscordWebhook'
+export type * from './models/Slack'
+export type * from './models/Notion'
+export type * from './models/Connections'
+export type * from './models/Workflows'
 export type * from './commonInputTypes'

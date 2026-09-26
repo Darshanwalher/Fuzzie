@@ -397,7 +397,13 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 
 
 export const ModelName = {
-
+  User: 'User',
+  LocalGoogleCredential: 'LocalGoogleCredential',
+  DiscordWebhook: 'DiscordWebhook',
+  Slack: 'Slack',
+  Notion: 'Notion',
+  Connections: 'Connections',
+  Workflows: 'Workflows'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -413,10 +419,529 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: never
+    modelProps: "user" | "localGoogleCredential" | "discordWebhook" | "slack" | "notion" | "connections" | "workflows"
     txIsolationLevel: TransactionIsolationLevel
   }
-  model: {}
+  model: {
+    User: {
+      payload: Prisma.$UserPayload<ExtArgs>
+      fields: Prisma.UserFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.UserFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.UserFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserPayload>
+        }
+        findFirst: {
+          args: Prisma.UserFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.UserFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserPayload>
+        }
+        findMany: {
+          args: Prisma.UserFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserPayload>[]
+        }
+        create: {
+          args: Prisma.UserCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserPayload>
+        }
+        createMany: {
+          args: Prisma.UserCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.UserCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserPayload>[]
+        }
+        delete: {
+          args: Prisma.UserDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserPayload>
+        }
+        update: {
+          args: Prisma.UserUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserPayload>
+        }
+        deleteMany: {
+          args: Prisma.UserDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.UserUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.UserUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserPayload>[]
+        }
+        upsert: {
+          args: Prisma.UserUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserPayload>
+        }
+        aggregate: {
+          args: Prisma.UserAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateUser>
+        }
+        groupBy: {
+          args: Prisma.UserGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.UserGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.UserCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.UserCountAggregateOutputType> | number
+        }
+      }
+    }
+    LocalGoogleCredential: {
+      payload: Prisma.$LocalGoogleCredentialPayload<ExtArgs>
+      fields: Prisma.LocalGoogleCredentialFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.LocalGoogleCredentialFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LocalGoogleCredentialPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.LocalGoogleCredentialFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LocalGoogleCredentialPayload>
+        }
+        findFirst: {
+          args: Prisma.LocalGoogleCredentialFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LocalGoogleCredentialPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.LocalGoogleCredentialFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LocalGoogleCredentialPayload>
+        }
+        findMany: {
+          args: Prisma.LocalGoogleCredentialFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LocalGoogleCredentialPayload>[]
+        }
+        create: {
+          args: Prisma.LocalGoogleCredentialCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LocalGoogleCredentialPayload>
+        }
+        createMany: {
+          args: Prisma.LocalGoogleCredentialCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.LocalGoogleCredentialCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LocalGoogleCredentialPayload>[]
+        }
+        delete: {
+          args: Prisma.LocalGoogleCredentialDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LocalGoogleCredentialPayload>
+        }
+        update: {
+          args: Prisma.LocalGoogleCredentialUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LocalGoogleCredentialPayload>
+        }
+        deleteMany: {
+          args: Prisma.LocalGoogleCredentialDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.LocalGoogleCredentialUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.LocalGoogleCredentialUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LocalGoogleCredentialPayload>[]
+        }
+        upsert: {
+          args: Prisma.LocalGoogleCredentialUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LocalGoogleCredentialPayload>
+        }
+        aggregate: {
+          args: Prisma.LocalGoogleCredentialAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateLocalGoogleCredential>
+        }
+        groupBy: {
+          args: Prisma.LocalGoogleCredentialGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.LocalGoogleCredentialGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.LocalGoogleCredentialCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.LocalGoogleCredentialCountAggregateOutputType> | number
+        }
+      }
+    }
+    DiscordWebhook: {
+      payload: Prisma.$DiscordWebhookPayload<ExtArgs>
+      fields: Prisma.DiscordWebhookFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.DiscordWebhookFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DiscordWebhookPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.DiscordWebhookFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DiscordWebhookPayload>
+        }
+        findFirst: {
+          args: Prisma.DiscordWebhookFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DiscordWebhookPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.DiscordWebhookFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DiscordWebhookPayload>
+        }
+        findMany: {
+          args: Prisma.DiscordWebhookFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DiscordWebhookPayload>[]
+        }
+        create: {
+          args: Prisma.DiscordWebhookCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DiscordWebhookPayload>
+        }
+        createMany: {
+          args: Prisma.DiscordWebhookCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.DiscordWebhookCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DiscordWebhookPayload>[]
+        }
+        delete: {
+          args: Prisma.DiscordWebhookDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DiscordWebhookPayload>
+        }
+        update: {
+          args: Prisma.DiscordWebhookUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DiscordWebhookPayload>
+        }
+        deleteMany: {
+          args: Prisma.DiscordWebhookDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.DiscordWebhookUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.DiscordWebhookUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DiscordWebhookPayload>[]
+        }
+        upsert: {
+          args: Prisma.DiscordWebhookUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$DiscordWebhookPayload>
+        }
+        aggregate: {
+          args: Prisma.DiscordWebhookAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateDiscordWebhook>
+        }
+        groupBy: {
+          args: Prisma.DiscordWebhookGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.DiscordWebhookGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.DiscordWebhookCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.DiscordWebhookCountAggregateOutputType> | number
+        }
+      }
+    }
+    Slack: {
+      payload: Prisma.$SlackPayload<ExtArgs>
+      fields: Prisma.SlackFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.SlackFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SlackPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.SlackFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SlackPayload>
+        }
+        findFirst: {
+          args: Prisma.SlackFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SlackPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.SlackFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SlackPayload>
+        }
+        findMany: {
+          args: Prisma.SlackFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SlackPayload>[]
+        }
+        create: {
+          args: Prisma.SlackCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SlackPayload>
+        }
+        createMany: {
+          args: Prisma.SlackCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.SlackCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SlackPayload>[]
+        }
+        delete: {
+          args: Prisma.SlackDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SlackPayload>
+        }
+        update: {
+          args: Prisma.SlackUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SlackPayload>
+        }
+        deleteMany: {
+          args: Prisma.SlackDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.SlackUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.SlackUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SlackPayload>[]
+        }
+        upsert: {
+          args: Prisma.SlackUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SlackPayload>
+        }
+        aggregate: {
+          args: Prisma.SlackAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateSlack>
+        }
+        groupBy: {
+          args: Prisma.SlackGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.SlackGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.SlackCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.SlackCountAggregateOutputType> | number
+        }
+      }
+    }
+    Notion: {
+      payload: Prisma.$NotionPayload<ExtArgs>
+      fields: Prisma.NotionFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.NotionFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$NotionPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.NotionFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$NotionPayload>
+        }
+        findFirst: {
+          args: Prisma.NotionFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$NotionPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.NotionFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$NotionPayload>
+        }
+        findMany: {
+          args: Prisma.NotionFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$NotionPayload>[]
+        }
+        create: {
+          args: Prisma.NotionCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$NotionPayload>
+        }
+        createMany: {
+          args: Prisma.NotionCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.NotionCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$NotionPayload>[]
+        }
+        delete: {
+          args: Prisma.NotionDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$NotionPayload>
+        }
+        update: {
+          args: Prisma.NotionUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$NotionPayload>
+        }
+        deleteMany: {
+          args: Prisma.NotionDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.NotionUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.NotionUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$NotionPayload>[]
+        }
+        upsert: {
+          args: Prisma.NotionUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$NotionPayload>
+        }
+        aggregate: {
+          args: Prisma.NotionAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateNotion>
+        }
+        groupBy: {
+          args: Prisma.NotionGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.NotionGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.NotionCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.NotionCountAggregateOutputType> | number
+        }
+      }
+    }
+    Connections: {
+      payload: Prisma.$ConnectionsPayload<ExtArgs>
+      fields: Prisma.ConnectionsFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.ConnectionsFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ConnectionsPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.ConnectionsFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ConnectionsPayload>
+        }
+        findFirst: {
+          args: Prisma.ConnectionsFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ConnectionsPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.ConnectionsFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ConnectionsPayload>
+        }
+        findMany: {
+          args: Prisma.ConnectionsFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ConnectionsPayload>[]
+        }
+        create: {
+          args: Prisma.ConnectionsCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ConnectionsPayload>
+        }
+        createMany: {
+          args: Prisma.ConnectionsCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.ConnectionsCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ConnectionsPayload>[]
+        }
+        delete: {
+          args: Prisma.ConnectionsDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ConnectionsPayload>
+        }
+        update: {
+          args: Prisma.ConnectionsUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ConnectionsPayload>
+        }
+        deleteMany: {
+          args: Prisma.ConnectionsDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.ConnectionsUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.ConnectionsUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ConnectionsPayload>[]
+        }
+        upsert: {
+          args: Prisma.ConnectionsUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ConnectionsPayload>
+        }
+        aggregate: {
+          args: Prisma.ConnectionsAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateConnections>
+        }
+        groupBy: {
+          args: Prisma.ConnectionsGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ConnectionsGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.ConnectionsCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ConnectionsCountAggregateOutputType> | number
+        }
+      }
+    }
+    Workflows: {
+      payload: Prisma.$WorkflowsPayload<ExtArgs>
+      fields: Prisma.WorkflowsFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.WorkflowsFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WorkflowsPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.WorkflowsFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WorkflowsPayload>
+        }
+        findFirst: {
+          args: Prisma.WorkflowsFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WorkflowsPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.WorkflowsFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WorkflowsPayload>
+        }
+        findMany: {
+          args: Prisma.WorkflowsFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WorkflowsPayload>[]
+        }
+        create: {
+          args: Prisma.WorkflowsCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WorkflowsPayload>
+        }
+        createMany: {
+          args: Prisma.WorkflowsCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.WorkflowsCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WorkflowsPayload>[]
+        }
+        delete: {
+          args: Prisma.WorkflowsDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WorkflowsPayload>
+        }
+        update: {
+          args: Prisma.WorkflowsUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WorkflowsPayload>
+        }
+        deleteMany: {
+          args: Prisma.WorkflowsDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.WorkflowsUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.WorkflowsUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WorkflowsPayload>[]
+        }
+        upsert: {
+          args: Prisma.WorkflowsUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WorkflowsPayload>
+        }
+        aggregate: {
+          args: Prisma.WorkflowsAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateWorkflows>
+        }
+        groupBy: {
+          args: Prisma.WorkflowsGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.WorkflowsGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.WorkflowsCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.WorkflowsCountAggregateOutputType> | number
+        }
+      }
+    }
+  }
 } & {
   other: {
     payload: any
@@ -455,7 +980,203 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
+export const UserScalarFieldEnum = {
+  id: 'id',
+  clerkId: 'clerkId',
+  name: 'name',
+  email: 'email',
+  profileImage: 'profileImage',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  localGoogleId: 'localGoogleId',
+  googleResourceId: 'googleResourceId'
+} as const
 
+export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
+
+
+export const LocalGoogleCredentialScalarFieldEnum = {
+  id: 'id',
+  accessToken: 'accessToken',
+  folderId: 'folderId',
+  pageToken: 'pageToken',
+  channelId: 'channelId',
+  subscribed: 'subscribed',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  userId: 'userId'
+} as const
+
+export type LocalGoogleCredentialScalarFieldEnum = (typeof LocalGoogleCredentialScalarFieldEnum)[keyof typeof LocalGoogleCredentialScalarFieldEnum]
+
+
+export const DiscordWebhookScalarFieldEnum = {
+  id: 'id',
+  webhookId: 'webhookId',
+  url: 'url',
+  name: 'name',
+  guildName: 'guildName',
+  guildId: 'guildId',
+  channelId: 'channelId',
+  userId: 'userId'
+} as const
+
+export type DiscordWebhookScalarFieldEnum = (typeof DiscordWebhookScalarFieldEnum)[keyof typeof DiscordWebhookScalarFieldEnum]
+
+
+export const SlackScalarFieldEnum = {
+  id: 'id',
+  appId: 'appId',
+  authedUserId: 'authedUserId',
+  authedUserToken: 'authedUserToken',
+  slackAccessToken: 'slackAccessToken',
+  botUserId: 'botUserId',
+  teamId: 'teamId',
+  teamName: 'teamName',
+  userId: 'userId'
+} as const
+
+export type SlackScalarFieldEnum = (typeof SlackScalarFieldEnum)[keyof typeof SlackScalarFieldEnum]
+
+
+export const NotionScalarFieldEnum = {
+  id: 'id',
+  accessToken: 'accessToken',
+  workspaceId: 'workspaceId',
+  databaseId: 'databaseId',
+  workspaceName: 'workspaceName',
+  workspaceIcon: 'workspaceIcon',
+  userId: 'userId'
+} as const
+
+export type NotionScalarFieldEnum = (typeof NotionScalarFieldEnum)[keyof typeof NotionScalarFieldEnum]
+
+
+export const ConnectionsScalarFieldEnum = {
+  id: 'id',
+  type: 'type',
+  discordWebhookId: 'discordWebhookId',
+  notionId: 'notionId',
+  userId: 'userId',
+  slackId: 'slackId'
+} as const
+
+export type ConnectionsScalarFieldEnum = (typeof ConnectionsScalarFieldEnum)[keyof typeof ConnectionsScalarFieldEnum]
+
+
+export const WorkflowsScalarFieldEnum = {
+  id: 'id',
+  nodes: 'nodes',
+  edges: 'edges',
+  name: 'name',
+  discordTemplate: 'discordTemplate',
+  notionTemplate: 'notionTemplate',
+  slackTemplate: 'slackTemplate',
+  slackChannels: 'slackChannels',
+  slackAccessToken: 'slackAccessToken',
+  notionAccessToken: 'notionAccessToken',
+  notionDbId: 'notionDbId',
+  flowPath: 'flowPath',
+  cronPath: 'cronPath',
+  publish: 'publish',
+  description: 'description',
+  userId: 'userId'
+} as const
+
+export type WorkflowsScalarFieldEnum = (typeof WorkflowsScalarFieldEnum)[keyof typeof WorkflowsScalarFieldEnum]
+
+
+export const SortOrder = {
+  asc: 'asc',
+  desc: 'desc'
+} as const
+
+export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
+
+
+export const QueryMode = {
+  default: 'default',
+  insensitive: 'insensitive'
+} as const
+
+export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
+
+
+export const NullsOrder = {
+  first: 'first',
+  last: 'last'
+} as const
+
+export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
+
+
+
+/**
+ * Field references
+ */
+
+
+/**
+ * Reference to a field of type 'Int'
+ */
+export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
+    
+
+
+/**
+ * Reference to a field of type 'Int[]'
+ */
+export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
+    
+
+
+/**
+ * Reference to a field of type 'String'
+ */
+export type StringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String'>
+    
+
+
+/**
+ * Reference to a field of type 'String[]'
+ */
+export type ListStringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String[]'>
+    
+
+
+/**
+ * Reference to a field of type 'DateTime'
+ */
+export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
+    
+
+
+/**
+ * Reference to a field of type 'DateTime[]'
+ */
+export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime[]'>
+    
+
+
+/**
+ * Reference to a field of type 'Boolean'
+ */
+export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
+    
+
+
+/**
+ * Reference to a field of type 'Float'
+ */
+export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
+    
+
+
+/**
+ * Reference to a field of type 'Float[]'
+ */
+export type ListFloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float[]'>
+    
 
 /**
  * Batch Payload for updateMany & deleteMany & createMany
@@ -607,7 +1328,15 @@ export interface PrismaClientOptionsWithAdapter extends PrismaClientBaseOptions 
  * Learn more about driver adapters: https://pris.ly/d/driver-adapters
  */
 export type PrismaClientOptions = PrismaClientOptionsWithAccelerateUrl | PrismaClientOptionsWithAdapter
-export type GlobalOmitConfig = {}
+export type GlobalOmitConfig = {
+  user?: Prisma.UserOmit
+  localGoogleCredential?: Prisma.LocalGoogleCredentialOmit
+  discordWebhook?: Prisma.DiscordWebhookOmit
+  slack?: Prisma.SlackOmit
+  notion?: Prisma.NotionOmit
+  connections?: Prisma.ConnectionsOmit
+  workflows?: Prisma.WorkflowsOmit
+}
 
 /* Types for Logging */
 export type LogLevel = 'info' | 'query' | 'warn' | 'error'

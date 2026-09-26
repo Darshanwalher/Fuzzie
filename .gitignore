@@ -46,3 +46,11 @@ next-env.d.ts
 .agents
 .claude
 .windsurf
+generated
+generated/prisma/browser.ts
+generated/prisma/client.ts
+generated/prisma/commonInputTypes.ts
+generated/prisma/models.ts
+generated/prisma/internal/class.ts
+generated/prisma/internal/prismaNamespace.ts
+generated/prisma/internal/prismaNamespaceBrowser.ts

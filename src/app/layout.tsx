@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/providers/themeProvider";
+import { ClerkProvider } from '@clerk/nextjs'
 
 const dmSans = DM_Sans({
   variable: "--font-sans",
@@ -17,7 +18,10 @@ export default function RootLayout({
   children,
 }: LayoutProps<"/">) {
   return (
-    <html
+     <ClerkProvider
+      publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
+    >
+      <html
       lang="en"
       suppressHydrationWarning
       data-scroll-behavior="smooth"
@@ -34,5 +38,9 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
+
+    </ClerkProvider>
+    
   );
 }
+
