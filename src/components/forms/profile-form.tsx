@@ -32,8 +32,8 @@ const ProfileForm = ({ user, onUpdate }: Props) => {
     mode: 'onChange',
     resolver: zodResolver(EditUserProfileSchema),
     defaultValues: {
-      name: "",
-      email: " ",
+      name: user?.name || '',
+      email: user?.email || '',
     },
   })
 
@@ -56,6 +56,7 @@ const ProfileForm = ({ user, onUpdate }: Props) => {
     >
       <FieldGroup>
         <Controller
+          disabled={isLoading}
           control={form.control}
           name="name"
           render={({ field }) => (
@@ -81,7 +82,7 @@ const ProfileForm = ({ user, onUpdate }: Props) => {
               <FieldContent>
                 <Input
                   {...field}
-                //   disabled={true}
+                  disabled={true}
                   placeholder="Email"
                   type="email"
                 />
