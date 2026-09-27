@@ -1,10 +1,14 @@
 'use client'
 import React from 'react'
-// import UploadCareButton from './uploadcare-button'
+import dynamic from 'next/dynamic'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { X } from 'lucide-react'
+
+const UploadCareButton = dynamic(() => import('./uploadcare-button'), {
+  ssr: false,
+})
 
 type Props = {
   userImage: string | null
@@ -32,7 +36,8 @@ const ProfilePicture = ({ userImage, onDelete, onUpload }: Props) => {
               <Image
                 src={userImage}
                 alt="User_Image"
-                fill 
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
               />
             </div>
             <Button

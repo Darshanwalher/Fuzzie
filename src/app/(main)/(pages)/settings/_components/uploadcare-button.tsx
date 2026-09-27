@@ -51,7 +51,9 @@ const UploadCareButton = ({ onUpload }: Props) => {
     <div>
       <lr-config
         ctx-name="my-uploader"
-        pubkey="a9428ff5ff90ae7a64eb"
+        pubkey="8c9d9b8530f5370284fc"
+        store="auto"
+        cdn-cname="https://2p1vs18ahp.ucarecd.net"
       />
 
       <lr-file-uploader-regular
