@@ -26,19 +26,19 @@ const ConnectionCard = ({
   connected,
 }: Props) => {
   return (
-    <Card className="flex w-full items-center justify-between">
-      <CardHeader className="flex min-w-0 flex-col gap-4">
-        <div className="flex flex-row gap-2">
+    <Card className="w-full flex-row items-center justify-between gap-4 rounded-lg border-0 bg-neutral-950/60 px-5 py-6 ring-1 ring-neutral-800">
+      <CardHeader className="flex min-w-0 flex-1 flex-col items-start gap-3 text-left">
+        <div className="flex flex-col gap-1">
           <Image
             src={icon}
             alt={title}
-            height={30}
-            width={30}
+            height={32}
+            width={32}
             className="h-[30px] w-[30px] shrink-0 object-contain"
           />
         </div>
         <div className="min-w-0">
-          <CardTitle className="text-lg">{title}</CardTitle>
+          <CardTitle className="text-base font-semibold text-white">{title}</CardTitle>
           <CardDescription>{description}</CardDescription>
         </div>
       </CardHeader>
