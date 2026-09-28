@@ -42,7 +42,7 @@ const ProfilePicture = ({ userImage, onDelete, onUpload }: Props) => {
             </div>
             <Button
               onClick={onRemoveProfileImage}
-              className="bg-transparent text-white/70 hover:bg-transparent hover:text-white"
+              className="bg-transparent text-foreground hover:bg-transparent hover:text-foreground/80 cursor-pointer"
             >
               <X /> Remove Logo
             </Button>
