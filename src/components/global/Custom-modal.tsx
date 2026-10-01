@@ -41,7 +41,7 @@ const CustomModal = ({ children, subheading, title, defaultOpen }: Props) => {
             {children}
           </DrawerDescription>
         </DrawerHeader>
-        <DrawerFooter className="flex flex-col gap-4 bg-background border-t-[1px] border-t-muted">
+        <DrawerFooter className="flex flex-col gap-4 bg-background border-t border-t-muted">
           <DrawerClose>
             <Button
               variant="ghost"
