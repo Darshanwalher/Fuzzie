@@ -3,6 +3,7 @@ import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/providers/themeProvider";
 import { ClerkProvider } from '@clerk/nextjs'
+import ModelProvider from "@/providers/modal-provider";
 
 const dmSans = DM_Sans({
   variable: "--font-sans",
@@ -34,7 +35,9 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            {children}
+            <ModelProvider>
+              {children}
+            </ModelProvider>
           </ThemeProvider>
         </ClerkProvider>
       </body>

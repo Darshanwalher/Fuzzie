@@ -132,7 +132,7 @@ const Workflowform = ({ subTitle, title }: Props) => {
           </FieldGroup>
 
           <Button
-            className="mt-2"
+            className="mt-2 cursor-pointer"
             disabled={isLoading}
             type="submit"
           >

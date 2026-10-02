@@ -45,7 +45,7 @@ const CustomModal = ({ children, subheading, title, defaultOpen }: Props) => {
           <DrawerClose>
             <Button
               variant="ghost"
-              className="w-full"
+              className="w-full cursor-pointer"
               onClick={handleClose}
             >
               Close
