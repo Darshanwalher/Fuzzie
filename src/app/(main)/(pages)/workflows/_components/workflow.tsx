@@ -61,6 +61,14 @@ const Workflow = ({ description, id, name, publish }: Props) => {
               width={32}
               className="h-8 w-8 shrink-0 object-contain"
             />
+
+            <Image
+              src="/slack.png"
+              alt="Slack"
+              height={32}
+              width={32}
+              className="h-8 w-8 shrink-0 object-contain"
+            />
           </div>
 
           <CardTitle className="mb-1 text-lg font-semibold">
@@ -82,6 +90,7 @@ const Workflow = ({ description, id, name, publish }: Props) => {
         </Label>
 
         <Switch
+          className="cursor-pointer"
           id="airplane-mode"
         //   defaultChecked={publish!}
         //   onClick={onPublishFlow}
