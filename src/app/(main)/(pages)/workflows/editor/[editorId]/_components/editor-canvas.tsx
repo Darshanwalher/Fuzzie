@@ -27,7 +27,7 @@ import { usePathname } from 'next/navigation'
 import { v4 } from 'uuid'
 import { EditorCanvasDefaultCardTypes } from '@/lib/constant'
 import FlowInstance from './flow-instance'
-import EditorCanvasSidebar from './editor-canvas-sidebar'
+// import EditorCanvasSidebar from './editor-canvas-sidebar'
 // import { onGetNodesEdges } from '../../../_actions/workflow-connections'
 
 type Props = {}
