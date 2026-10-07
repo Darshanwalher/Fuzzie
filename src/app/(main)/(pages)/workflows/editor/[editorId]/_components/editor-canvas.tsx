@@ -21,13 +21,13 @@ import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
-} from '@/components/ui/resizable'
+} from '@/components/ui/resizable'  
 import { toast } from 'sonner'
 import { usePathname } from 'next/navigation'
 import { v4 } from 'uuid'
 import { EditorCanvasDefaultCardTypes } from '@/lib/constant'
 import FlowInstance from './flow-instance'
-// import EditorCanvasSidebar from './editor-canvas-sidebar'
+import EditorCanvasSidebar from './editor-canvas-sidebar'
 // import { onGetNodesEdges } from '../../../_actions/workflow-connections'
 
 type Props = {}

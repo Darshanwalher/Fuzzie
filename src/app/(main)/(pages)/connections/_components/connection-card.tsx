@@ -41,7 +41,7 @@ const ConnectionCard = ({
           alt={title}
           height={32}
           width={32}
-          className="h-[30px] w-[30px] shrink-0 object-contain"
+          className="h-7.5 w-7.5 shrink-0 object-contain"
         />
 
         <div className="min-w-0">

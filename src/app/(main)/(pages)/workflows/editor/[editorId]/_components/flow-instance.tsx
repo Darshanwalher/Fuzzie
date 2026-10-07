@@ -58,12 +58,14 @@ const FlowInstance = ({ children, edges, nodes }: Props) => {
     <div className="flex flex-col gap-2">
       <div className="flex gap-3 p-4">
         <Button
+          className="cursor-pointer"
           onClick={onFlowAutomation}
           disabled={isFlow.length < 1}
         >
           Save
         </Button>
         <Button
+          className="cursor-pointer"
           disabled={isFlow.length < 1}
           onClick={onPublishWorkflow}
         >

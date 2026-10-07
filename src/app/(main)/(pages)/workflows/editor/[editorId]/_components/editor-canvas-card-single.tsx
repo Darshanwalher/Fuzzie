@@ -9,7 +9,6 @@ import { Badge } from '@/components/ui/badge'
 import {
   Card,
   CardDescription,
-  CardHeader,
   CardTitle,
 } from '@/components/ui/card'
 import clsx from 'clsx'
@@ -44,11 +43,11 @@ const EditorCanvasCardSingle = ({ data }: { data: EditorCanvasCardType }) => {
               },
             })
         }}
-        className="relative max-w-100 dark:border-muted-foreground/70"
+        className="relative min-w-[280px] max-w-[400px] dark:border-muted-foreground/70"
       >
-        <CardHeader className="flex flex-row items-center gap-4">
-          <div>{logo}</div>
-          <div>
+        <div className="flex flex-row items-center gap-4 px-4">
+          <div className="shrink-0">{logo}</div>
+          <div className="min-w-0">
             <CardTitle className="text-md">{data.title}</CardTitle>
             <CardDescription>
               <p className="text-xs text-muted-foreground/50">
@@ -58,7 +57,7 @@ const EditorCanvasCardSingle = ({ data }: { data: EditorCanvasCardType }) => {
               <p>{data.description}</p>
             </CardDescription>
           </div>
-        </CardHeader>
+        </div>
         <Badge
           variant="secondary"
           className="absolute right-2 top-2"
