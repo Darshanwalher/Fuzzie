@@ -79,12 +79,12 @@ const ConnectionCard = ({
                     : '#'
             }
             className="
-              rounded-lg
+              cursor-pointer rounded-lg border-2 border-primary
               bg-primary px-3 py-2
-              font-semibold
-              text-primary-foreground
-              transition-opacity
-              hover:opacity-90
+              font-semibold text-primary-foreground
+              transition-all duration-200
+              hover:bg-transparent hover:text-primary
+              no-underline!
             "
           >
             Connect
