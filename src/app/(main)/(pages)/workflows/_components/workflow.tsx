@@ -12,6 +12,7 @@ import Image from "next/image"
 import { Label } from "@/components/ui/label"
 import { Switch } from "@/components/ui/switch"
 import { toast } from "sonner"
+import { onFlowPublish } from "../_actions/workflow-connections"
 
 type Props = {
   name: string
@@ -21,13 +22,12 @@ type Props = {
 }
 
 const Workflow = ({ description, id, name, publish }: Props) => {
-    //WIP : write up DB
   const onPublishFlow = async (checked: boolean) => {
-    // const response = await onFlowPublish(id, checked)
+    const response = await onFlowPublish(id, checked)
 
-    // if (response) {
-    //   toast.message(response)
-    // }
+    if (response) {
+      toast.message(response)
+    }
   }
 
   return (
@@ -92,7 +92,7 @@ const Workflow = ({ description, id, name, publish }: Props) => {
         <Switch
           className="cursor-pointer"
           id="airplane-mode"
-        //   defaultChecked={publish!}
+          defaultChecked={publish!}
         //   onClick={onPublishFlow}
         />
       </div>

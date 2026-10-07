@@ -17,6 +17,8 @@ import {
 import { CONNECTIONS, EditorCanvasDefaultCardTypes } from '@/lib/constant'
 
 import {
+  fetchBotSlackChannels,
+  onConnections,
   onDragStart
 } from '@/lib/editor-utils'
 
@@ -43,20 +45,20 @@ const EditorCanvasSidebar = ({ nodes }: Props) => {
   const { nodeConnection } = useNodeConnections()
   const { googleFile, setSlackChannels } = useFuzzieStore()
 
-  // useEffect(() => {
-  //   if (state) {
-  //     onConnections(nodeConnection, state, googleFile)
-  //   }
-  // }, [state, nodeConnection, googleFile])
+  useEffect(() => {
+    if (state) {
+      onConnections(nodeConnection, state, googleFile)
+    }
+  }, [state, nodeConnection, googleFile])
 
-  // useEffect(() => {
-  //   if (nodeConnection.slackNode.slackAccessToken) {
-  //     fetchBotSlackChannels(
-  //       nodeConnection.slackNode.slackAccessToken,
-  //       setSlackChannels
-  //     )
-  //   }
-  // }, [nodeConnection, setSlackChannels])
+  useEffect(() => {
+    if (nodeConnection.slackNode.slackAccessToken) {
+      fetchBotSlackChannels(
+        nodeConnection.slackNode.slackAccessToken,
+        setSlackChannels
+      )
+    }
+  }, [nodeConnection, setSlackChannels])
 
   return (
     <aside>
