@@ -30,7 +30,7 @@ import {
 } from '@/components/ui/accordion'
 
 import RenderConnectionAccordion from './render-connection-accordion'
-// import RenderOutputAccordion from './render-output-accordian'
+import RenderOutputAccordion from './render-output-accordian'
 
 import { useFuzzieStore } from '@/store'
 
@@ -157,10 +157,10 @@ const EditorCanvasSidebar = ({ nodes }: Props) => {
               </AccordionTrigger>
 
               <AccordionContent>
-                {/* <RenderOutputAccordion
+                <RenderOutputAccordion
                   state={state}
                   nodeConnection={nodeConnection}
-                /> */}
+                />
               </AccordionContent>
             </AccordionItem>
           </Accordion>

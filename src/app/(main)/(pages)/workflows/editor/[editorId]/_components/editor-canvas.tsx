@@ -223,7 +223,7 @@ const EditorCanvas = (props: Props) => {
                 <Controls position="top-left" />
                 <MiniMap
                   position="bottom-left"
-                  className="bg-background"
+                  className="!rounded-lg"
                   zoomable
                   pannable
                 />
