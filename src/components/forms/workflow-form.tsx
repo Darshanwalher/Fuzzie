@@ -30,7 +30,7 @@ import { Loader2 } from "lucide-react"
 import { toast } from "sonner"
 
 import { useModal } from "@/providers/modal-provider"
-// import { onCreateWorkflow } from "@/app/(main)/(pages)/workflows/_actions/workflow-connections"
+import { onCreateWorkflow } from "@/app/(main)/(pages)/workflows/_actions/workflow-connections"
 
 type Props = {
   title?: string
@@ -55,22 +55,22 @@ const Workflowform = ({ subTitle, title }: Props) => {
   const handleSubmit = async (
     values: z.infer<typeof WorkflowFormSchema>
   ) => {
-    // try {
-    //   const workflow = await onCreateWorkflow(
-    //     values.name,
-    //     values.description
-    //   )
+    try {
+      const workflow = await onCreateWorkflow(
+        values.name,
+        values.description
+      )
 
-    //   if (workflow) {
-    //     toast.success(workflow.message)
-    //     router.refresh()
-    //   }
+      if (workflow) {
+        toast.success(workflow.message)
+        router.refresh()
+      }
 
-    //   setClose()
-    // } catch (error) {
-    //   console.error(error)
-    //   toast.error("Something went wrong")
-    // }
+      setClose()
+    } catch (error) {
+      console.error(error)
+      toast.error("Something went wrong")
+    }
   }
 
   return (
