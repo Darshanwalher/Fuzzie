@@ -123,12 +123,14 @@ const ActionButton = ({
         return (
           <>
             <Button
+              className="cursor-pointer"
               variant="outline"
               onClick={onSendDiscordMessage}
             >
               Test Message
             </Button>
             <Button
+              className="cursor-pointer"
               onClick={onCreateLocalNodeTempate}
               variant="outline"
             >
@@ -141,12 +143,14 @@ const ActionButton = ({
         return (
           <>
             <Button
+              className="cursor-pointer"
               variant="outline"
               onClick={onStoreNotionContent}
             >
               Test
             </Button>
             <Button
+              className="cursor-pointer"
               onClick={onCreateLocalNodeTempate}
               variant="outline"
             >
@@ -159,12 +163,14 @@ const ActionButton = ({
         return (
           <>
             <Button
+              className="cursor-pointer"
               variant="outline"
               onClick={onStoreSlackContent}
             >
               Send Message
             </Button>
             <Button
+              className="cursor-pointer"
               onClick={onCreateLocalNodeTempate}
               variant="outline"
             >

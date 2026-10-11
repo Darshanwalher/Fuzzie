@@ -61,12 +61,12 @@ const EditorCanvasSidebar = ({ nodes }: Props) => {
   }, [nodeConnection, setSlackChannels])
 
   return (
-    <aside>
+    <aside className="h-full w-full">
       <Tabs
         defaultValue="actions"
-        className="h-screen overflow-scroll pb-24"
+        className="h-full flex flex-col gap-0"
       >
-        <TabsList className="bg-transparent">
+        <TabsList className="bg-transparent justify-start px-4">
           <TabsTrigger value="actions" className="cursor-pointer">
             Actions
           </TabsTrigger>
@@ -80,7 +80,7 @@ const EditorCanvasSidebar = ({ nodes }: Props) => {
         {/* Actions */}
         <TabsContent
           value="actions"
-          className="flex flex-col gap-4 p-4"
+          className="flex-1 min-h-0 flex flex-col gap-4 p-4 overflow-y-auto overflow-x-hidden no-scrollbar pb-24"
         >
           {Object.entries(EditorCanvasDefaultCardTypes)
             .filter(
@@ -92,7 +92,7 @@ const EditorCanvasSidebar = ({ nodes }: Props) => {
               <Card
                 key={cardKey}
                 draggable
-                className="w-full cursor-grab border-black bg-neutral-100 dark:border-neutral-700 dark:bg-neutral-900 shrink-0"
+                className="w-full cursor-grab border-black bg-neutral-100 transition-all hover:border-neutral-500 hover:shadow-sm dark:border-neutral-700 dark:bg-neutral-900 shrink-0"
                 onDragStart={(event) =>
                   onDragStart(
                     event,
@@ -122,7 +122,7 @@ const EditorCanvasSidebar = ({ nodes }: Props) => {
         {/* Settings */}
         <TabsContent
           value="settings"
-          className="-mt-4 flex flex-col gap-4 p-4"
+          className="flex-1 min-h-0 flex flex-col gap-4 p-4 overflow-y-auto overflow-x-hidden no-scrollbar pb-24"
         >
           <div className="px-2 py-4 text-center text-xl font-bold">
             {state.editor.selectedNode.data.title}

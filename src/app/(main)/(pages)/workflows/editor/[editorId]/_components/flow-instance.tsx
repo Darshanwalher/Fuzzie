@@ -55,8 +55,8 @@ const FlowInstance = ({ children, edges, nodes }: Props) => {
   }, [edges])
 
   return (
-    <div className="flex flex-col gap-2">
-      <div className="flex gap-3 p-4">
+    <div className="flex flex-col h-full overflow-hidden">
+      <div className="flex gap-3 p-4 shrink-0 border-b border-border/40">
         <Button
           className="cursor-pointer"
           onClick={onFlowAutomation}
@@ -72,7 +72,9 @@ const FlowInstance = ({ children, edges, nodes }: Props) => {
           Publish
         </Button>
       </div>
-      {children}
+      <div className="flex-1 min-h-0 overflow-hidden">
+        {children}
+      </div>
     </div>
   )
 }

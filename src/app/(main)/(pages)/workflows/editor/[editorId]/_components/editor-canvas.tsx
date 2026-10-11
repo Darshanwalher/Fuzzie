@@ -219,6 +219,7 @@ const EditorCanvas = (props: Props) => {
                 fitView
                 onClick={handleClickCanvas}
                 nodeTypes={nodeTypes}
+                proOptions={{ hideAttribution: true }}
               >
                 <Controls position="top-left" />
                 <MiniMap
