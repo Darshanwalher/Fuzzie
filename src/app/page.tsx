@@ -42,7 +42,7 @@ export default function Home() {
         <div className="absolute inset-0 h-full w-full px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_35%,#223_100%)]" />
 
         {/* Hero Content */}
-        <div className="relative z-10 mt-[-100px] flex flex-col md:mt-[-50px]">
+        <div className="relative z-10 mt-25 flex flex-col md:mt-12.5">
           <ContainerScroll
             titleComponent={
               <div className="flex flex-col items-center">
@@ -50,9 +50,9 @@ export default function Home() {
                 <ScrollReveal delay={0.2} direction="up">
                   <Button
                     size="lg"
-                    className="group mb-8 flex w-full items-center justify-center gap-4 rounded-full border-t-2 border-[#4D4D4D] bg-[#1F1F1F] p-8 text-2xl transition-all duration-500 hover:bg-white hover:shadow-xl hover:shadow-neutral-500 sm:w-fit md:mb-4"
+                    className="group mb-8 flex w-full cursor-pointeritems-center justify-center gap-4 rounded-full border-t-2 border-[#4D4D4D] bg-[#1F1F1F] p-8 text-2xl transition-all duration-500 hover:bg-white hover:shadow-xl hover:shadow-neutral-500 sm:w-fit md:mb-4"
                   >
-                    <span className="bg-gradient-to-r from-neutral-500 to-neutral-600 bg-clip-text font-sans text-transparent transition-all group-hover:from-black group-hover:to-black">
+                    <span className="bg-linear-to-r from-neutral-500 to-neutral-600 bg-clip-text font-sans text-transparent transition-all group-hover:from-black group-hover:to-black">
                       Start For Free Today
                     </span>
                   </Button>
@@ -60,7 +60,7 @@ export default function Home() {
 
                 {/* Heading */}
                 <ScrollReveal delay={0.4} direction="up" distance={30}>
-                  <h1 className="-mt-4 bg-gradient-to-b from-white to-neutral-600 bg-clip-text text-center font-sans text-5xl font-bold text-transparent md:text-8xl">
+                  <h1 className="-mt-4 bg-linear-to-b from-white to-neutral-600 bg-clip-text text-center font-sans text-5xl font-bold text-transparent md:text-8xl">
                     Automate Your Work With Fuzzie
                   </h1>
                 </ScrollReveal>
@@ -69,13 +69,13 @@ export default function Home() {
           />
         </div>
         {/* Bottom fade for hero */}
-        <div className="pointer-events-none absolute bottom-0 left-0 z-20 h-40 w-full bg-gradient-to-t from-neutral-950 to-transparent" />
+        <div className="pointer-events-none absolute bottom-0 left-0 z-20 h-40 w-full bg-linear-to-t from-neutral-950 to-transparent" />
       </section>
 
       {/* Clients Section */}
       <ScrollReveal direction="none" duration={1}>
         <InfiniteMovingCards
-          className="mt-[-100px] md:mt-[20rem]"
+          className="mt-25 md:mt-80"
           items={clients}
           direction="right"
           speed="slow"
@@ -86,11 +86,11 @@ export default function Home() {
       <section className="relative">
         <HeroParallax products={products} />
         {/* Bottom fade for parallax */}
-        <div className="pointer-events-none absolute bottom-0 left-0 z-20 h-60 w-full bg-gradient-to-t from-neutral-950 to-transparent" />
+        <div className="pointer-events-none absolute bottom-0 left-0 z-20 h-60 w-full bg-linear-to-t from-neutral-950 to-transparent" />
       </section>
 
       {/* Pricing Section */}
-      <section className="relative mt-[-500px] bg-neutral-950">
+      <section className="relative mt-125 bg-neutral-950">
         <LampComponent />
 
         <StaggerContainer
@@ -101,7 +101,7 @@ export default function Home() {
             <StaggerItem key={plan.name}>
               <CardContainer className="inter-var">
                 <CardBody
-                  className={`group/card relative h-auto w-full rounded-xl border border-black/[0.1] bg-gray-50 p-6 dark:bg-black dark:hover:shadow-2xl dark:hover:shadow-neutral-500/[0.1] md:!w-[350px] ${plan.borderClass}`}
+                  className={`group/card relative h-auto w-full rounded-xl border border-black/10 bg-gray-50 p-6 dark:bg-black dark:hover:shadow-2xl dark:hover:shadow-neutral-500/10 md:w-87.5! ${plan.borderClass}`}
                 >
                   <CardItem
                     translateZ="50"

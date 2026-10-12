@@ -12,91 +12,122 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 
-import { menuOptions } from "@/lib/constant";
-import { Separator } from "@base-ui/react";
-import { Database, GitBranch, LucideMousePointerClick } from "lucide-react";
+import {
+  Home,
+  Zap,
+  Settings,
+  LayoutGrid,
+  CreditCard,
+  CloudDownload,
+  ClipboardList,
+  Database,
+  GitBranch,
+  MousePointerClick,
+} from "lucide-react";
 import { ModeToggle } from "../global/Mode-toggle";
+
+// Update names/hrefs to match your real routes
+const menuOptions = [
+  { name: "Dashboard", icon: Home, href: "/dashboard" },
+  { name: "Workflows", icon: Zap, href: "/workflows" },
+  { name: "Settings", icon: Settings, href: "/settings" },
+  { name: "Connections", icon: LayoutGrid, href: "/connections" },
+  { name: "Billing", icon: CreditCard, href: "/billing" },
+  { name: "Templates", icon: CloudDownload, href: "/templates" },
+  { name: "Logs", icon: ClipboardList, href: "/logs" },
+];
+
+const workflowSteps = [
+  { icon: MousePointerClick, label: "Trigger", active: true },
+  { icon: GitBranch, label: "Condition", active: false },
+  { icon: Database, label: "Action", active: false },
+  { icon: GitBranch, label: "Branch", active: false },
+];
 
 const MenuOptions = () => {
   const pathName = usePathname();
 
   return (
-    <nav className="flex h-screen flex-col items-center justify-between gap-10 overflow-y-auto no-scrollbar px-2.5 py-6 dark:bg-black">
-      <div className="flex flex-col items-center justify-center gap-8">
+    <nav className="flex h-screen w-[72px] shrink-0 flex-col items-center justify-between gap-6 overflow-y-auto border-r border-border bg-background px-3 py-5 no-scrollbar">
+      <div className="flex flex-col items-center gap-6">
+        {/* Brand */}
         <Link
           href="/"
-          className="flex flex-row overflow-hidden font-bold"
+          className="text-[15px] font-semibold tracking-tight text-foreground"
         >
           fuzzie.
         </Link>
 
+        {/* Primary navigation */}
         <TooltipProvider>
-          {menuOptions.map((menuItem) => (
-            <ul key={menuItem.name}>
-              <Tooltip>
-                <TooltipTrigger>
-                  <li>
-                    <Link
-                      href={menuItem.href}
-                      className={clsx(
-                        "group flex h-8 w-8 scale-[1.4] cursor-pointer items-center justify-center rounded-lg p-0.75",
-                        {
-                          "bg-[#EEE0FF] dark:bg-[#2F006B]":
-                            pathName === menuItem.href,
-                        }
-                      )}
-                    >
-                      <menuItem.Component
-                        selected={pathName === menuItem.href}
-                      />
-                    </Link>
-                  </li>
-                </TooltipTrigger>
+          <ul className="flex flex-col items-center gap-1.5">
+            {menuOptions.map((menuItem) => {
+              const isActive = pathName === menuItem.href;
+              const Icon = menuItem.icon;
 
-                <TooltipContent
-                  side="right"
-                  className="bg-black/10 backdrop-blur-xl"
-                >
-                  <p className="text-white">{menuItem.name}</p>
-                </TooltipContent>
-              </Tooltip>
-            </ul>
-          ))}
+              return (
+                <li key={menuItem.name}>
+                  <Tooltip>
+                    <TooltipTrigger
+                      render={
+                        <Link
+                          href={menuItem.href}
+                          aria-label={menuItem.name}
+                          aria-current={isActive ? "page" : undefined}
+                          className={clsx(
+                            "relative flex h-10 w-10 items-center justify-center rounded-lg transition-colors",
+                            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                            isActive
+                              ? "bg-primary/10 text-primary dark:bg-primary/20"
+                              : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+                          )}
+                        />
+                      }
+                    >
+                      {isActive && (
+                        <span className="absolute -left-3 h-5 w-[3px] rounded-r-full bg-primary" />
+                      )}
+                      <Icon className="h-5 w-5" strokeWidth={1.75} />
+                    </TooltipTrigger>
+
+                    <TooltipContent side="right" sideOffset={8}>
+                      {menuItem.name}
+                    </TooltipContent>
+                  </Tooltip>
+                </li>
+              );
+            })}
+          </ul>
         </TooltipProvider>
-        <Separator />
-        <div className="flex items-center flex-col gap-9 dark:bg-[#353346]/30 py-4 px-2 rounded-full h-56 overflow-y-auto no-scrollbar border-[1px]">
-          <div className="relative dark:bg-[#353346]/70 p-2 rounded-full dark:border-t-[2px] border-[1px] dark:border-t-[#353346]">
-            <LucideMousePointerClick
-              className="dark:text-white"
-              size={18}
-            />
-            <div className="border-l-2 border-muted-foreground/50 h-6 absolute left-1/2 transform translate-x-[-50%] -bottom-[30px]" />
-          </div>
-          <div className="relative dark:bg-[#353346]/70 p-2 rounded-full dark:border-t-[2px] border-[1px] dark:border-t-[#353346]">
-            <GitBranch
-              className="text-muted-foreground"
-              size={18}
-            />
-            <div className="border-l-2 border-muted-foreground/50 h-6 absolute left-1/2 transform translate-x-[-50%] -bottom-[30px]"></div>
-          </div>
-          <div className="relative dark:bg-[#353346]/70 p-2 rounded-full dark:border-t-[2px] border-[1px] dark:border-t-[#353346]">
-            <Database
-              className="text-muted-foreground"
-              size={18}
-            />
-            <div className="border-l-2 border-muted-foreground/50 h-6 absolute left-1/2 transform translate-x-[-50%] -bottom-[30px]"></div>
-          </div>
-          <div className="relative dark:bg-[#353346]/70 p-2 rounded-full dark:border-t-[2px] border-[1px] dark:border-t-[#353346]">
-            <GitBranch
-              className="text-muted-foreground"
-              size={18}
-            />
-          </div>
-        </div>
+
+        <div className="h-px w-8 bg-border" />
+
+        {/* Workflow steps */}
+        <ol className="flex flex-col items-center rounded-full border border-border bg-muted/50 px-1.5 py-3">
+          {workflowSteps.map(({ icon: Icon, label, active }, i) => (
+            <li key={i} className="flex flex-col items-center">
+              <span
+                title={label}
+                className={clsx(
+                  "flex h-8 w-8 items-center justify-center rounded-full border transition-colors",
+                  active
+                    ? "border-primary/30 bg-primary/10 text-primary dark:bg-primary/20"
+                    : "border-border bg-background text-muted-foreground"
+                )}
+              >
+                <Icon className="h-4 w-4" strokeWidth={1.75} />
+              </span>
+              {i < workflowSteps.length - 1 && (
+                <span className="my-1 h-3 w-px bg-border" />
+              )}
+            </li>
+          ))}
+        </ol>
       </div>
-      <div className="flex items-center justify-center flex-col gap-8">
+
+      {/* <div className="flex flex-col items-center gap-4">
         <ModeToggle />
-      </div>
+      </div> */}
     </nav>
   );
 };
